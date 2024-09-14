@@ -7,7 +7,7 @@ import { Footer, Header } from "./components";
 import { Outlet } from "react-router-dom";
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -27,7 +27,7 @@ function App() {
       <div className="w-full block">
         <Header/>
         <main>
-        TODO:  {/* <Outlet/>*/}
+        {/* <Outlet/>*/}
         </main>
         <Footer/>
 
