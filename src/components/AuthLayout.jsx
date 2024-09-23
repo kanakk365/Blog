@@ -9,13 +9,13 @@ function AuthLayout({ children, authenticated = true }) {
 
   useEffect(() => {
     if (authenticated && authStatus !== authenticated) {
+      console.log("login kr");
       navigate("/login");
     } else if (!authenticated && authStatus !== authenticated) {
       navigate("/");
     }
     setLoader(false);
   }, [navigate, authStatus, authenticated]);
-
 
   return loader ? <h1>Loading</h1> : <>{children}</>;
 }

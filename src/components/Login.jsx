@@ -10,7 +10,7 @@ function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [error, setError] = useState(null);
-  const [register, handleSubmit] = useForm();
+  const { register, handleSubmit } = useForm();
 
   const login = async (data) => {
     setError("");
@@ -19,7 +19,7 @@ function Login() {
       if (session) {
         const userData = await authService.getCurrentUser();
         if (userData) dispatch(authStoreLogin(userData));
-        navigate('/')
+        navigate("/");
       }
     } catch (e) {
       setError(e.message);
@@ -71,7 +71,9 @@ function Login() {
                 required: true,
               })}
             />
-            <Button type= "submit" className="w-full">Sigh In</Button>
+            <Button type="submit" className="w-full">
+              Sign In
+            </Button>
           </div>
         </form>
       </div>
