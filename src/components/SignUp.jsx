@@ -14,11 +14,10 @@ function Signup() {
 
   const create = async (data) => {
     setError("");
-    console.log("Form data: ", data);
     try {
       const userData = await authService.createAccount(data);
       if (userData) {
-        userData = await authService.getCurrentUser();
+        const userData = await authService.getCurrentUser();
         if (userData) dispatch(login(userData));
         navigate("/");
       }
@@ -66,7 +65,6 @@ function Signup() {
               type="email"
               {...register("email", {
                 required: true,
-                
               })}
             />
             <Input

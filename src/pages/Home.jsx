@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import appwriteServices from "../appwrite/config";
 import { Container } from "../components";
+import PostCard from "../components/PostCard";
+import { BackgroundBeamsWithCollision } from "../components/ui/background-beams-with-collision";
+import HeroContainer from "../components/container/HeroContainer";
 
 function Home() {
   const [posts, setPosts] = useState([]);
@@ -12,34 +15,33 @@ function Home() {
     });
   }, []);
 
-  if (posts.length === 0) {
+  {
     return (
-      <div className="w-full py-8 mt-4 text-center">
-        <Container>
-          <div className="flex flex-wrap">
-            <div className="p-2 w-full">
-              <h1 className="text-2xl font-bold hover:text-gray-500">
-                Login to read posts
-              </h1>
+      <div className="w-full z-50  text-center">
+        <HeroContainer>
+          <BackgroundBeamsWithCollision>
+            <div>
+              <h2 className="text-2xl relative z-20 md:text-4xl lg:text-7xl font-bold text-center text-black  font-sans tracking-tight pb-2">
+                Welcome to{" "}
+                <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
+                  <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink [text-shadow:0_0_rgba(0,0,0,0.1)]">
+                    <span className=""> blogAble</span>
+                  </div>
+                  <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-400 via-violet-700 to-violet-500 py-4">
+                    <span className=""> blogAble</span>
+                  </div>
+                </div>
+              </h2>
+              <p className="mx-auto max-w-[700px] md:text-xl">
+                Exploring ideas, sharing insights, and discussing the latest
+                trends in technology and beyond.
+              </p>
             </div>
-          </div>
-        </Container>
+          </BackgroundBeamsWithCollision>
+        </HeroContainer>
       </div>
     );
   }
-  return (
-    <div className="w-full py-8">
-      <Container>
-        <div className="flex flex-wrap">
-          {posts.map((post) => (
-            <div key={post.$id} className="p-2 w-1/4">
-              <PostCard {...post} />
-            </div>
-          ))}
-        </div>
-      </Container>
-    </div>
-  );
 }
 
 export default Home;
