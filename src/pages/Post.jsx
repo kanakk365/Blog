@@ -45,8 +45,8 @@ export default function Post() {
               />
             </div>
             <div className=" w-full h-full flex flex-col justify-center mb-4 relative text-center rounded-xl p-2 gap-10">
-              <h1 className="text-5xl font-bold text-center ">{post.title}</h1>
-              <div className="browser-css text-xl ">{parse(post.content)}</div>
+              <h1 className=" text-2xl sm:text-5xl font-bold text-center ">{post.title}</h1>
+              <div className="browser-css text-lg sm:text-xl ">{parse(post.content)}</div>
             </div>
           </div>
         </div>
