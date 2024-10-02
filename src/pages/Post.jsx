@@ -37,33 +37,32 @@ export default function Post() {
       <Container>
         <div className="flex flex-col justify-center  ">
           <div className="flex flex-col justify-center items-center ">
-            <div className="w-full mb-6">
-              <h1 className="text-5xl font-bold text-center ">{post.title}</h1>
-              {isAuthor && (
-                <div className="absolute right-36 top-20">
-                  <Link to={`/edit-post/${post.$id}`}>
-                    <Button bgColor="bg-green-500" className="mr-3">
-                      Edit
-                    </Button>
-                  </Link>
-                  <Button bgColor="bg-red-500" onClick={deletePost}>
-                    Delete
-                  </Button>
-                </div>
-              )}
-            </div>
-            <div className=" w-full h-full flex justify-center mb-4 relative border rounded-xl p-2 gap-10">
+            <div className="w-full mb-6 flex items-center justify-center ">
               <img
                 src={appwriteService.getFilePreview(post.featuredImage)}
                 alt={post.title}
-                className="rounded-xl w-1/2 h-1/2"
+                className="rounded-xl w-1/2 h-1/2 sm:w-1/3 sm:h-1/3"
               />
-
-              
+            </div>
+            <div className=" w-full h-full flex flex-col justify-center mb-4 relative text-center rounded-xl p-2 gap-10">
+              <h1 className="text-5xl font-bold text-center ">{post.title}</h1>
               <div className="browser-css text-xl ">{parse(post.content)}</div>
             </div>
-          </div>{" "}
-          
+          </div>
+        </div>
+        <div>
+          {isAuthor && (
+            <div className="flex justify-end">
+              <Link to={`/edit-post/${post.$id}`}>
+                <Button bgColor="bg-green-500" className="mr-3">
+                  Edit
+                </Button>
+              </Link>
+              <Button bgColor="bg-red-500" onClick={deletePost}>
+                Delete
+              </Button>
+            </div>
+          )}
         </div>
       </Container>
     </div>
