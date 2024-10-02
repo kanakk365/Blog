@@ -5,7 +5,7 @@ import appwriteServices from "../appwrite/config";
 function PostCard({ $id, featuredImage, title, content }) {
   return (
     <Link to={`/post/${$id}`}>
-      <div className="w-full bg-gray-100  py-4 flex flex-row justify-between border-b-2 border-gray-400 h-72">
+      <div className="w-full bg-gray-100  py-4 flex flex-row justify-between border-b-2 border-gray-400 sm:h-72">
         <div className="flex flex-col justify-between gap-2 w-3/4">
           <div>
             <h2 className=" text-xl sm:text-4xl font-bold">{title}</h2>
