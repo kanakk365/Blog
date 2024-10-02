@@ -14,7 +14,7 @@ function LogoutBtn() {
     navigate("/")
   };
 
-  return <button className="inline-block px-4 py-2 duration-200 hover:bg-gradient-to-r from-purple-400 via-violet-500 to-violet-400 hover:text-white rounded-2xl font-semibold text-xl" onClick={logoutHandler}>Logout</button>;
+  return <button className=" text-sm sm:text-xl inline-block px-4 py-2 duration-200 hover:bg-gradient-to-r from-purple-400 via-violet-500 to-violet-400 hover:text-white rounded-2xl font-semibold text-xl" onClick={logoutHandler}>Logout</button>;
 }
 
 export default LogoutBtn;
