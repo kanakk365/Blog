@@ -33,7 +33,7 @@ export default function Post() {
   };
 
   return post ? (
-    <div className="py-8">
+    <div className="py-8 ">
       <Container>
         <div className="flex flex-col justify-center  ">
           <div className="flex flex-col justify-center items-center ">
@@ -41,12 +41,12 @@ export default function Post() {
               <img
                 src={appwriteService.getFilePreview(post.featuredImage)}
                 alt={post.title}
-                className="rounded-xl w-1/2 h-1/2 sm:w-1/3 sm:h-1/3"
+                className=" w-2/3 h-2/3 sm:w-2/3 sm:h-full"
               />
             </div>
             <div className=" w-full h-full flex flex-col justify-center mb-4 relative  rounded-xl p-2 gap-10">
-              <h1 className=" text-2xl sm:text-5xl font-bold text-center font-fractul ">{post.title}</h1>
-              <div className="browser-css text-lg sm:text-xl  "><p>{parse(post.content)}</p></div>
+              <h1 className=" text-2xl sm:text-5xl font-bold text-center font-fractul text-gray-800 ">{post.title}</h1>
+              <div className="browser-css text-lg sm:text-xl text-gray-700  "><p>{parse(post.content)}</p></div>
             </div>
           </div>
         </div>
