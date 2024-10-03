@@ -21,13 +21,24 @@ export default function PostForm({ post }) {
     });
 
   const navigate = useNavigate();
-  const userData = useSelector((state) => state.auth.userData);
+  let userData = useSelector((state) => state.auth.userData);
 
   const submit = async (data) => {
     try {
       let file = null;
+
+      if (!userData) {
+        console.error("User data is undefined.");
+        return;
+      }
+
       if (data.image && data.image[0]) {
         file = await appwriteService.uploadFile(data.image[0]);
+
+        if (!file) {
+          console.error("File upload failed.");
+          return;
+        }
       }
 
       if (post) {
@@ -45,16 +56,16 @@ export default function PostForm({ post }) {
         }
       } else {
         if (file) {
-          const fileId = file.$id;
-          data.featuredImage = fileId;
-          const dbPost = await appwriteService.createPost({
-            ...data,
-            userId: userData.$id,
-          });
+          data.featuredImage = file.$id;
+        }
 
-          if (dbPost) {
-            navigate(`/post/${dbPost.$id}`);
-          }
+        const dbPost = await appwriteService.createPost({
+          ...data,
+          userId: userData.$id,
+        });
+
+        if (dbPost) {
+          navigate(`/post/${dbPost.$id}`);
         }
       }
     } catch (error) {
