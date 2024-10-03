@@ -9,7 +9,7 @@ function PostCard({ $id, featuredImage, title, content }) {
 
   return (
     <Link to={`/post/${$id}`}>
-      <div className="w-full bg-gray-100  py-4 flex flex-row justify-between border-b-2 border-gray-400 sm:h-60 sm:gap-2">
+      <div className="w-full bg-gray-100  py-4 flex flex-row justify-between border-b-2 border-gray-400 sm:h-60 gap-1 sm:gap-2">
         <div className="flex flex-col justify-between gap-2 w-3/4">
           <div className="flex flex-col justify-between gap-3 sm:gap-12">
             <div className="flex flex-col gap-3">
@@ -25,11 +25,11 @@ function PostCard({ $id, featuredImage, title, content }) {
           </div>
         </div>
 
-        <div className="justify-center mb-4 w-1/4">
+        <div className="justify-center mb-4 w-1/4 sm:w-1/4">
           <img
             src={appwriteServices.getFilePreview(featuredImage)}
             alt={title}
-            className=" rounded-md h-full w-full "
+            className=" rounded-md h-24 sm:h-full sm:w-full "
           />
         </div>
       </div>
