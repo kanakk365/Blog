@@ -4,6 +4,7 @@ import { Container } from "../components";
 import PostCard from "../components/PostCard";
 import { BackgroundBeamsWithCollision } from "../components/ui/background-beams-with-collision";
 import HeroContainer from "../components/container/HeroContainer";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [posts, setPosts] = useState([]);
@@ -36,7 +37,8 @@ function Home() {
                 Exploring ideas and discussing the latest
                 trends in technology and beyond.
               </p>
-              <button className="bg-gradient-to-r from-purple-400 via-violet-700 to-violet-500 text-white px-4 py-1 rounded-md mt-4 font-fractul">Explore</button>
+              <Link to={"all-posts"}><button className="bg-gradient-to-r from-purple-400 via-violet-700 to-violet-500 text-white px-4 py-1 rounded-md mt-4 font-fractul">Explore</button></Link>
+              
             </div>
           </BackgroundBeamsWithCollision>
         </HeroContainer>
