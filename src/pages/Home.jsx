@@ -37,7 +37,7 @@ function Home() {
                 Exploring ideas and discussing the latest
                 trends in technology and beyond.
               </p>
-              <Link to={"all-posts"}><button className="bg-gradient-to-r from-purple-400 via-violet-700 to-violet-500 text-white px-4 py-1 rounded-md mt-4 font-fractul">Explore</button></Link>
+              <Link to={"/all-posts"}><button className="bg-gradient-to-r from-purple-400 via-violet-700 to-violet-500 text-white px-4 py-1 rounded-md mt-4 font-fractul">Explore</button></Link>
               
             </div>
           </BackgroundBeamsWithCollision>
