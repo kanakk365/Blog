@@ -9,7 +9,7 @@ function PostCard({ $id, featuredImage, title, content }) {
 
   return (
     <Link to={`/post/${$id}`}>
-      <div className="w-full bg-gray-100  py-4 flex flex-row justify-between border-b-2 border-gray-400 sm:h-60 gap-2">
+      <div className="w-full bg-gray-100  py-4 flex flex-row justify-between border-b-2 border-gray-400 sm:h-60 sm:gap-2">
         <div className="flex flex-col justify-between gap-2 w-3/4">
           <div className="flex flex-col justify-between gap-3 sm:gap-12">
             <div className="flex flex-col gap-3">
@@ -20,7 +20,7 @@ function PostCard({ $id, featuredImage, title, content }) {
               ></p>
             </div>
             <div>
-              <p className="text-sm sm:text-base">{readTime} mins read</p>
+              <p className="text-sm sm:text-base ">{readTime} mins read</p>
             </div>
           </div>
         </div>
