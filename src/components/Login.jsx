@@ -17,14 +17,10 @@ function Login() {
     try {
       const session = await authService.login(data);
       if (session) {
-        const userData = await authService.getCurrentUser();
+        let userData = await authService.getCurrentUser();
         console.log(userData);
-        if (userData) {
-
-          dispatch(authStoreLogin(userData));
-          
-        }
-        navigate("/");
+        dispatch(authStoreLogin(userData));
+        navigate("/app-post");
       }
     } catch (e) {
       setError(e.message);

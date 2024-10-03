@@ -12,7 +12,7 @@ function AuthLayout({ children, authenticated = true }) {
       console.log("login kr");
       navigate("/login");
     } else if (!authenticated && authStatus !== authenticated) {
-      navigate("/");
+      navigate("/all-posts");
     }
     setLoader(false);
   }, [navigate, authStatus, authenticated]);
