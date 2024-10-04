@@ -7,14 +7,14 @@ function Footer() {
     
         return (
           <footer className="px-0 sm:px-32 py-0 sm:py-4  w-full bg-neutral-100 flex-shrink-0 items-center ">
-            <div className="container flex flex-wrap items-center justify-center mx-auto space-y-4 sm:justify-between gap-23 sm:space-y-0">
+            <div className="container flex flex-wrap items-center justify-center mx-auto space-y-4 sm:justify-between gap-20 sm:space-y-0">
               <div className="flex flex-row pr-3 space-x-4 sm:space-x-8 justify-center">
                 <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 font-semibold ">
                   blogAble
                 </div>
                <Clock/>
               </div>
-              <ul className="flex flex-wrap pl-3 space-x-4 sm:space-x-8 pb-4 ">
+              <ul className="flex flex-wrap pl-0 sm:pl-3 space-x-3 sm:space-x-8 pb-4 ">
                 <li>
                   <a href="https://www.instagram.com/kanak_k365/">Instagram</a>
                 </li>
