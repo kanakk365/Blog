@@ -20,7 +20,9 @@ function Login() {
         let userData = await authService.getCurrentUser();
         console.log(userData);
         dispatch(authStoreLogin(userData));
-        navigate("/app-post");
+        navigate("/all-posts");
+        window.location.reload(true)
+        
       }
     } catch (e) {
       setError(e.message);
